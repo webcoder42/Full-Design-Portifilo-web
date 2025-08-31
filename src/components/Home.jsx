@@ -23,26 +23,15 @@ const Home = ({ ratio }) => {
 
   const animations = {
     h1: {
-      initial: {
-        x: "-100%",
-        opacity: 0,
-      },
-      whileInView: {
-        x: 0,
-        opacity: 1,
-      },
+      initial: { x: "-100%", opacity: 0 },
+      whileInView: { x: 0, opacity: 1 },
     },
     button: {
-      initial: {
-        y: "-100%",
-        opacity: 0,
-      },
-      whileInView: {
-        y: 0,
-        opacity: 1,
-      },
+      initial: { y: "-100%", opacity: 0 },
+      whileInView: { y: 0, opacity: 1 },
     },
   };
+
   return (
     <div id="home">
       <section>
@@ -104,10 +93,36 @@ const Home = ({ ratio }) => {
           </aside>
         </div>
       </section>
-      <section>
-        <img src={me} alt="Bilal" />
-      </section>
-      <BsChevronDown />
+
+      {/* Image ko circle ke andar fix kiya gaya */}
+     <section>
+  <div
+    style={{
+      width: "700px",      // circle ka size (aap yaha change kar sakte ho)
+      height: "700px",
+      borderRadius: "50%",
+      overflow: "hidden",
+      border: "4px solid #000", // optional border
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      margin: "auto",
+    }}
+  >
+    <img
+      src={me}
+      alt="Bilal"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",   // image ko circle ke andar poora cover karega
+      }}
+    />
+  </div>
+</section>
+
+
+   
     </div>
   );
 };
