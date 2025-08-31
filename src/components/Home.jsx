@@ -14,6 +14,7 @@ const Home = ({ ratio }) => {
       onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
     });
   };
+
   const animationProjectsCount = () => {
     animate(0, 500, {
       duration: 1,
@@ -34,10 +35,11 @@ const Home = ({ ratio }) => {
 
   return (
     <div id="home">
+      {/* Left Section */}
       <section>
         <div>
           <motion.h1 {...animations.h1}>
-            Hi, I Am <br /> Bilal Butt
+            Hi, I Am <br /> Ahmed Bilal
           </motion.h1>
 
           <Typewriter
@@ -51,7 +53,7 @@ const Home = ({ ratio }) => {
           />
 
           <div>
-            <a href="an8274885@gmail.com">Hire Me</a>
+            <a href="mailto:an8274885@gmail.com">Hire Me</a>
             <a href="#work">
               Projects <BsArrowUpRight />
             </a>
@@ -94,35 +96,15 @@ const Home = ({ ratio }) => {
         </div>
       </section>
 
-      {/* Image ko circle ke andar fix kiya gaya */}
-     <section>
-  <div
-    style={{
-      width: "700px",      // circle ka size (aap yaha change kar sakte ho)
-      height: "700px",
-      borderRadius: "50%",
-      overflow: "hidden",
-      border: "4px solid #000", // optional border
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: "auto",
-    }}
-  >
-    <img
-      src={me}
-      alt="Bilal"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",   // image ko circle ke andar poora cover karega
-      }}
-    />
-  </div>
-</section>
+      {/* Right Section - Circle Image */}
+      <section className="imageSection">
+        <div className="circleWrapper">
+          <img src={me} alt="Bilal" />
+        </div>
+      </section>
 
-
-   
+      {/* Scroll Down Icon */}
+      <BsChevronDown />
     </div>
   );
 };
